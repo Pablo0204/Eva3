@@ -1,0 +1,49 @@
+<div class="contenedor-inicio">
+  <header class="header">
+    <h1>🥬 VERDURA TIENDA</h1>
+    <p class="subtitulo">Compra las mejores verduras frescas en línea</p>
+  </header>
+
+  <section class="categorias">
+    <h2>Categorías Principales</h2>
+    <div class="grid-categorias">
+      <div class="categoria">
+        <div class="emoji">🥗</div>
+        <p>Verduras de Hoja</p>
+      </div>
+      <div class="categoria">
+        <div class="emoji">🥕</div>
+        <p>Raíces y Tubérculos</p>
+      </div>
+      <div class="categoria">
+        <div class="emoji">🍅</div>
+        <p>Solanáceas</p>
+      </div>
+      <div class="categoria">
+        <div class="emoji">🥦</div>
+        <p>Crucíferas</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="promociones">
+    <h2>Productos Destacados</h2>
+    <div class="grid-productos">
+      <div class="producto-card" *ngFor="let producto of productosDestacados">
+        <div class="producto-header">
+          <h3>{{ producto.nombre }}</h3>
+          <span class="precio">${{ producto.precio_unitario.toFixed(2) }}</span>
+        </div>
+        <p class="descripcion">{{ producto.descripcion }}</p>
+        <p class="stock">Stock: {{ producto.stock }} unidades</p>
+        <button (click)="agregarAlCarrito(producto)" class="btn-agregar">
+          🛒 Agregar al Carrito
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 Verdura Tienda - Todos los derechos reservados</p>
+  </footer>
+</div>
